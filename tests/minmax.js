@@ -32,4 +32,10 @@ QUnit.module('Тестируем функцию minmax', function () {
 	QUnit.test('minmax игнорирует обычный текст', function (assert) {
 		assert.deepEqual(minmax('1, -5.8 или 10, хотя 34 + -5.3 и 73'), [ -5.8, 73 ]);
 	});
+
+	QUnit.test('minmax правильно парсит набор символов без пробелов', function (assert) {
+		assert.deepEqual(minmax('asf56e-5yuwi-Infinity4k228'), [ -Infinity, 228 ]);
+		assert.deepEqual(minmax('fdgdfgre228werdsfkemqlwe'), [ 228, 228 ]);
+	});
+
 });
