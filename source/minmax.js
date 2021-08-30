@@ -1,5 +1,11 @@
 'use strict';
 
+/**
+ * @description finding min and max numbers in string
+ * @param {String} str source string
+ * @return {Array} returns array in which the first elem is min numb, the second - max numb
+ */
+
 const minmax = str => {
     if (typeof(str) != "string")
         return [undefined, undefined];
