@@ -39,9 +39,28 @@ QUnit.module('Тестируем функцию minmax', function () {
 	});
 
 	QUnit.test('minmax не ломается при передаче не строки', function (assert) {
-		assert.deepEqual(minmax(556), [ undefined, undefined ]);
-		assert.deepEqual(minmax(false), [ undefined, undefined ]);
-		assert.deepEqual(minmax(), [ undefined, undefined ]);
+		assert.throws(
+			function() {
+				minmax(false);
+			},
+			/Incorrect input/,
+			'Input data is incorrect'
+		);
+		assert.throws(
+			function() {
+				minmax();
+			},
+			/Incorrect input/,
+			'Input data is incorrect'
+		);
+		assert.throws(
+			function() {
+				minmax(556);
+			},
+			/Incorrect input/,
+			'Input data is incorrect'
+		);
+
 	});
 
 });
