@@ -40,23 +40,17 @@ QUnit.module('Тестируем функцию minmax', function () {
 
 	QUnit.test('minmax не ломается при передаче не строки', function (assert) {
 		assert.throws(
-			() => {
-				minmax(false);
-			},
+			() => { minmax(false); },
 			/Input is not string/,
 			'Input data is incorrect'
 		);
 		assert.throws(
-			() => {
-				minmax();
-			},
+			() => { minmax(); },
 			/Input is not string/,
 			'Input data is incorrect'
 		);
 		assert.throws(
-			() => {
-				minmax(556);
-			},
+			() => { minmax(556); },
 			/Input is not string/,
 			'Input data is incorrect'
 		);
