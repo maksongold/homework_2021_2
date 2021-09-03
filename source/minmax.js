@@ -9,7 +9,7 @@
 const minmax = (sourceString) => {
     const regexp = /(-?\.?\d+e-?\d+)|(-?\d*\.?\d+)|(-?Infinity)/g;
     if (typeof(sourceString) !== 'string') {
-        throw new Error('Incorrect input');
+        throw new TypeError('Input is not string');
     }
     const numbsFromStr = sourceString.match(regexp);
     if (!numbsFromStr) {
